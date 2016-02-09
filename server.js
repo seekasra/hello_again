@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 
+app.set('view engine', 'ejs');
+
 app.get('/', function (request, response) {
-	response.send('<h1>hello</h1> express');
+	response.render('default', {title: 'Home', topic: 'Javascript'});
 });
 
 
@@ -20,3 +22,13 @@ app.get('/who/:name?', function (request, response) {
 	response.send(name +' was here');
 });
 
+app.get('/who/:name?/:title?', function (request, response) {
+	var name = request.params.name;
+	var title = request.params.title;
+	response.send(name+ ' was this and the title is : '+title);
+});
+
+
+app.get('*', function (request, response) {
+	response.send('bad route');
+});

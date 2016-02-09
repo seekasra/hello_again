@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/seekasra/hello_again#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "nodemon": "^1.8.1"
   }
 }
