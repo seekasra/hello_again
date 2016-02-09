@@ -1,13 +1,17 @@
-<DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>my app</title>
-</head>
-<body>
-	<h1><%= title %></h1>
-	<p>Lorem Ipsum text is ok and the topid is : <%= topic %> </p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<% include partials/page/head.ejs %>
+	</head>
+  <body class="<%= classname %>" >	
+		<% include partials/page/header.ejs %>
+	<div class="container">
+    <h1><%= title %></h1>
+		<p>Lorem Ipsum text is ok</p>
+		
+	</div>
+		<% include partials/page/footer.ejs %>
+		<% include partials/page/jsdefaults.ejs %>
 </body>
 </html>
 

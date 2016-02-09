@@ -4,31 +4,24 @@ var app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', function (request, response) {
-	response.render('default', {title: 'Home', topic: 'Javascript'});
+	response.render('default', {
+		title: 'Home', 
+		classname: 'home',
+		users: ['hamed', 'reza', 'hosein']
+	});
+});
+app.get('/about', function (request, response) {
+	response.render('default', {
+		title: 'about us', 
+		classname: 'about'
+	});
 });
 
-
-app.get('/me', function (request, response) {
-	response.send('@seekasra');
+app.get('*', function (request, response) {
+	response.send('bad route');
 });
 
 var server = app.listen(3000, function (){
 	console.log('Listening on port 3000');
 });
 
-
-app.get('/who/:name?', function (request, response) {
-	var name = request.params.name;
-	response.send(name +' was here');
-});
-
-app.get('/who/:name?/:title?', function (request, response) {
-	var name = request.params.name;
-	var title = request.params.title;
-	response.send(name+ ' was this and the title is : '+title);
-});
-
-
-app.get('*', function (request, response) {
-	response.send('bad route');
-});
