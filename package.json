@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/seekasra/hello_again/issues"
   },
-  "homepage": "https://github.com/seekasra/hello_again#readme"
+  "homepage": "https://github.com/seekasra/hello_again#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
